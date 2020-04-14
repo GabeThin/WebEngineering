@@ -1,49 +1,21 @@
-setTime();
+let button = document.getElementById("submitButton");
+button.addEventListener("click", getWords);
 
-function setTime() {
-  console.log(location.search);
-  let now = new Date();
-  let birthday = new Date(location.search);
-  let millis = birthday.getTime() - now.getTime();
-  let timeDistance = birthday.getTime() - now.getTime();
-  let seconds = Math.floor((timeDistance % 60000) / 1000);
-  let mins = Math.floor((timeDistance % (3600000)) / 60000);
-  let hrs = Math.floor((timeDistance % (86400000)) / 3600000);
-  let days = Math.floor(timeDistance / 86400000);
 
-  if (seconds >= 10) {
-    document.getElementById("time").innerHTML = days + " days and " + hrs + ":" + mins + ":" + seconds;
-  }
-  if (seconds <= 10) {
-    document.getElementById("time").innerHTML = days + " days and " + hrs + ":" + mins + ":0" + seconds;
-  }
-  if (mins >= 10) {
-    document.getElementById("time").innerHTML = days + " days and " + hrs + ":" + mins + ":" + seconds;
-  }
-  if (mins <= 10) {
-    document.getElementById("time").innerHTML = days + " days and " + hrs + ":0" + mins + ":" + seconds;
-  }
-  if (hrs >= 10) {
-    document.getElementById("time").innerHTML = days + " days and " + hrs + ":" + mins + ":" + seconds;
-  }
-  if (hrs <= 10) {
-    document.getElementById("time").innerHTML = days + "days and 0" + hrs + ":" + mins + ":" + seconds;
-  }
-  if (mins <= 10 && seconds <= 10) {
-    document.getElementById("time").innerHTML = days + " days and " + hrs + ":0" + mins + ":0" + seconds;
-  }
-  if (mins <= 10 && hrs <= 10) {
-    document.getElementById("time").innerHTML = days + "days and 0" + hrs + ":0" + mins + ":" + seconds;
-  }
-  if (hrs <= 10 && seconds <= 10) {
-    document.getElementById("time").innerHTML = days + "days and 0" + hrs + ":" + mins + ":0" + seconds;
-  }
-  if (hrs <= 10 && mins <= 10 && seconds <= 10) {
-    document.getElementById("time").innerHTML = days + "days and 0" + hrs + ":0" + mins + ":0" + seconds;
-  }
-  else if (hrs >= 10 && mins >= 10 && seconds >= 10){
-    document.getElementById("time").innerHTML = days + " days and " + hrs + ":" + mins + ":" + seconds;
-  }
-}
+function getWords() {
+    var adj1 = document.getElementById("adj1").value;
+    var noun1 = document.getElementById("noun1").value;
+    var verb1 = document.getElementById("verb1").value;
+    var noun2 = document.getElementById("noun2").value;
+    var verb2 = document.getElementById("verb2").value;
+    var verb3 = document.getElementById("verb3").value;
+    var verb4 = document.getElementById("verb4").value;
+    var adj2 = document.getElementById("adj2").value;
+    var pluralnoun1 = document.getElementById("pluralnoun1").value;
 
-setInterval(setTime, 1000);
+    document.getElementById("results").innerHTML = "Ever since my " + adj1 + " " + noun1 + " " + verb1 + ", my " + noun2 + " hasn’t been the same. I miss when we would go out and " + verb2 + ". Now I just stay in my house " + verb3 + ", doing nothing all day. I just wish I could " + verb4 + " back to those " + adj2 + " old days again, when we didn’t have to worry about " + pluralnoun1 + ".";
+    document.getElementById("results").style.display = "block";
+    document.getElementById("results").style.textalign = "center";
+
+    console.log("fjdklsf");
+  }

@@ -2,13 +2,39 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link href = "style.css" rel = "stylesheet" type = "text/css">
-    <title>Clock</title>
+    <title>Madlibs!</title>
+    <link href = "style.css" type = "text/css" rel = "stylesheet">
   </head>
   <body>
-    <h1>Clock</h1>
-    <p>Hank's birthday is in: </p>
-    <p id = "time">The time is 9:07am</p>
-  </body>
-  <script type = "text/javascript" src = "script.js"></script>
+  <h1>MadLibs</h1>
+  <p>Enter in words here and click the button to get the results!</p>
+  <center>
+  <div id="entry">
+      <p>Adjective</p>
+        <input type = "text" id = "adj1">
+      <p>Noun</p>
+        <input type = "text" id = "noun1">
+      <p>Verb Ending in -ed</p>
+        <input type = "text" id = "verb1">
+      <p>Noun<p>
+        <input type = "text" id = "noun2">
+      <p>Verb</p>
+        <input type = "text" id = "verb2">
+      <p>Verb Ending in -ing</p>
+        <input type = "text" id = "verb3">
+      <p>Verb</p>
+        <input type = "text" id = "verb4">
+      <p>Adjective</p>
+        <input type = "text" id = "adj2">
+      <p>Plural Noun</p>
+        <input type = "text" id = "pluralnoun1">
+        <br><br>
+    <button id = "submitButton">Submit</button>
+  </div>
+  <br><br><br>
+  <p id = "results" style = "display:none">
+  </p>
+</center>
+</body>
+<script type="text/javascript" src="script.js"></script>
 </html>
