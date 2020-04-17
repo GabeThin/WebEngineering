@@ -1,0 +1,54 @@
+body {
+  background-color: pink;
+}
+
+h1 {
+    font-family: Raleway;
+    font-size: 50px;
+    border-style: solid;
+    background-color: rgb(255, 138, 210);
+    border-top-color: rgb(255, 166, 254);
+    border-bottom-color: rgb(201, 40, 199);
+    border-left-color: rgb(212, 95, 210);
+    border-right-color: rgb(212, 95, 210);
+    text-align: center;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+p {
+    font-family: Raleway;
+    font-size: 16pt;
+}
+
+textarea {
+  background-color: rgb(255, 138, 210);
+  font-family: Raleway;
+  padding: 15px 0px;
+  font-size: 16pt;
+  border: none;
+  padding: 15px 15px;
+}
+
+input {
+  font-family: Raleway;
+  background-color: rgb(255, 138, 210);
+  margin-left: 40%;
+  width: 50px;
+  height: 15px;
+  margin-right: 40%;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 16pt;
+  border: none;
+  text-align: center;
+}
+
+button {
+  font-family: Raleway;
+  font-size: 16pt;
+  border: none;
+  color: white;
+  background-color: rgb(255, 138, 210);
+  padding: 15px 20px;
+}
