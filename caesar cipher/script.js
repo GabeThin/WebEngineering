@@ -33,6 +33,12 @@ function encode() {
       }
     }
 
+    if (string.charCodeAt(i) == 32 || string.charCodeAt(i) == 44 || string.charCodeAt(i) == 46) {
+        charCode -= key;
+      }
+
+    console.log(string.charCodeAt(i));
+
     encodedString += String.fromCharCode(charCode);
   }
 
