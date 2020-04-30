@@ -1,18 +1,6 @@
 let button = document.getElementById("encodeButton");
 button.addEventListener("click", encode);
 
-
-// function rev() {
-//   let string = document.getElementById("message").value;
-//   let splitString = string.split("");
-//
-//   let reverseArray = splitString.reverse();
-//   let reverseString = reverseArray.join("");
-//
-//   document.getElementById("encoded").innerHTML = reverseString;
-//
-// }
-
 function encode() {
   let string = document.getElementById("message").value;
   let encodedString = "";
@@ -22,13 +10,13 @@ function encode() {
     let charCode = string.charCodeAt(i) + key;
 
     if (string[i] == string[i].toUpperCase()) {
-      if(string.charCodeAt(i) + key > 90) {
+      if (string.charCodeAt(i) + key > 90) {
         charCode -= 26;
       }
     }
 
     if (string[i] == string[i].toLowerCase()){
-      if(string.charCodeAt(i) + key > 122) {
+      if (string.charCodeAt(i) + key > 122) {
         charCode -= 26;
       }
     }
@@ -36,6 +24,12 @@ function encode() {
     if (string.charCodeAt(i) == 32 || string.charCodeAt(i) == 44 || string.charCodeAt(i) == 46) {
         charCode -= key;
       }
+
+    if (string.charCodeAt(i) >= 48 && string.charCodeAt(i) <= 57) {
+      if (string.charCodeAt(i) + key > 57) {
+        charCode -= 10;
+      }
+    }
 
     console.log(string.charCodeAt(i));
 
