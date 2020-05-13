@@ -59,10 +59,11 @@ firebase.database().ref('/').on('value', function(snapshot) {
     var list5 = document.createElement("li");
     list5.innerHTML = users[i].other;
     ul.append(name);
-    ul.append("Bread" + list1);
-    ul.append("Meat" + list2);
-    ul.append("Condiments" + list3);
-    ul.append("Cheese" + list4);
-    ul.append("Other Toppings" + list5);
+    ul.append(list1);
+    ul.append(list2);
+    ul.append(list3);
+    ul.append(list4);
+    ul.append(list5);
+    console.log(list3);
 }
 });
