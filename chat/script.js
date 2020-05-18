@@ -22,11 +22,11 @@ function recieveMessage(message) {
     // callbackData(snapshot.val());
 		var time = new Date(snapshot.val().timestamp);
 		var month = time.getMonth() + 1;
-		var timeDisplay = month + "/" + time.getDate() + ", " + time.getHours() + ":" + time.getMinutes()
+		var timeDisplay = month + "/" + time.getDate() + ", " + time.getHours() + ":" + time.getMinutes();
 		var text = snapshot.val().content;
 		// var split = text.split();
 		// var testText = reverse.join();
-		console.log(testText);
+		// console.log(testText);
   });
 }
 
