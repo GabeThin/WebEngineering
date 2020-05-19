@@ -13,20 +13,29 @@ function recieveMessage(message) {
 	console.log(message);
 
 	// var time = new Date(message.timestamp);
-	var a = [];
-	a[0] = message.content;
-	// document.getElementById("display-messages").innerHTML += "<b>" + message.name + " - " + month + "/" + time.getDate() + ", " + time.getHours() + ":" + time.getMinutes() + "</b><br>" + a[0] + "<br><br>";
+	var time = new Date(message.timestamp);
+	var month = time.getMonth() + 1;
+	var timeDisplay = month + "/" + time.getDate() + ", " + time.getHours() + ":" + time.getMinutes();
+	document.getElementById("display-messages").innerHTML += "<b>" + message.name + " - " + month + "/" + time.getDate() + ", " + time.getHours() + ":" + time.getMinutes() + "</b><br>" + message.content + "<br><br>";
 
-	roomRef = database.ref('rooms/' + "_" + '/messages');
-  roomRef.on('child_added', function(snapshot) {
-    // callbackData(snapshot.val());
+	roomRef = database.ref('rooms/_/');
+  roomRef.on('value', function(snapshot) {
 		var time = new Date(snapshot.val().timestamp);
 		var month = time.getMonth() + 1;
 		var timeDisplay = month + "/" + time.getDate() + ", " + time.getHours() + ":" + time.getMinutes();
 		var text = snapshot.val().content;
-		// var split = text.split();
-		// var testText = reverse.join();
-		// console.log(testText);
+		var users = snapshot.val().messages;
+		console.log(users);
+
+		// var displayedMessages = document.getElementById("display-messages");
+		// displayedMessages.innerHTML = "<b>" + timeDisplay + "</b><br>" + message.content;
+
+		for (var i in users) {
+			var text1 = users[i].content;
+			console.log(text1);
+			// displayedMessages.innerHTML = "<b>" + name + " - " + timeDisplay + "</b><br>" + joinText;
+			// console.log(text[i]);
+		}
   });
 }
 
