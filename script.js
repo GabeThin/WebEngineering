@@ -14,30 +14,8 @@ function start(user) {
 //The message information is passed to you in the variable 'message'
 function recieveMessage(message) {
 
-	var time = new Date(message.timestamp);
-	var month = time.getMonth() + 1;
-	var mins = time.getMinutes();
-	var hours = time.getHours();
-
-	if (mins.toString().length == 1) {
-		mins = "0" + mins;
-	}
-
-	var timeDisplay = month + "/" + time.getDate() + ", " + hours + ":" + mins;
-	var nameAndTime = document.createElement("p");
-	nameAndTime.className = "name-and-time"
-	nameAndTime.innerHTML = message.name + " - " + timeDisplay + ": "
-
-
-	var text = document.createElement("p");
-	text.className = "text";
-	text.innerHTML = message.content + "<br><br>";
-
-	var fullMessage = document.createElement("div");
-	fullMessage.className = "full-message";
-
-	fullMessage.append(nameAndTime, text);
-	displayedMessages.prepend(fullMessage);
+	display = document.getElementById("display");
+	display.innerHTML += message.content + "<br>";
 }
 
 //The sendMessage('text') function will send a message from you to the database.
