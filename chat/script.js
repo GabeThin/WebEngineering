@@ -31,7 +31,7 @@ function recieveMessage(message) {
 
 	var text = document.createElement("p");
 	text.className = "text";
-	text.innerHTML = message.content + "<br><br>";
+	text.innerHTML = message.content + "<br>";
 
 	var fullMessage = document.createElement("div");
 	fullMessage.className = "full-message";
