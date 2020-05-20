@@ -26,7 +26,7 @@ function recieveMessage(message) {
 	var timeDisplay = month + "/" + time.getDate() + ", " + hours + ":" + mins;
 	var nameAndTime = document.createElement("p");
 	nameAndTime.className = "name-and-time"
-	nameAndTime.innerHTML = "<strong>" + message.name + " - " + timeDisplay + "</strong>"
+	nameAndTime.innerHTML = "<b>" + message.name + " - " + timeDisplay + "</b>"
 
 
 	var text = document.createElement("p");
