@@ -4,6 +4,7 @@ login(start, recieveMessage);
 var displayedMessages = document.getElementById("display-messages");
 displayedMessages.innerHTML = "";
 
+
 //This function runs after you have logged in. Your user information is passed to you in the variable 'user'
 function start(user) {
 	console.log(user);
@@ -31,13 +32,14 @@ function recieveMessage(message) {
 
 	var text = document.createElement("p");
 	text.className = "text";
-	text.innerHTML = message.content + "<br>";
+	text.innerHTML = message.content;
 
-	var fullMessage = document.createElement("div");
+	var fullMessage = document.createElement("p");
 	fullMessage.className = "full-message";
 
 	fullMessage.append(nameAndTime, text);
-	displayedMessages.prepend(fullMessage);
+	displayedMessages.append(fullMessage);
+	displayedMessages.scrollTop = displayedMessages.scrollHeight;
 }
 
 //The sendMessage('text') function will send a message from you to the database.

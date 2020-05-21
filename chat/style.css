@@ -4,21 +4,23 @@ body {
 
 #message {
   border: none;
-  width: 800px;
+  width: 1100px;
   height: 20px;
+  margin-left: 1%;
+  resize: none;
   padding: 15px 0px;
+  color: white;
   font-size: 14pt;
   font-family: 'Poppins', sans-serif;
   background-color: rgb(50, 220, 210);
 }
 
-/* .display-messages {
-  margin-left: 15%;
-  margin-right: 15%;
-  height: 800px;
-  width: 400px;
-  overflow: scroll;
-} */
+#display-messages {
+  height: 500px;
+  width: 1200px;
+  overflow: auto;
+  background-color: rgb(50, 220, 210);
+}
 
 #send-message {
   background-color: rgb(50, 200, 190);
@@ -26,17 +28,24 @@ body {
   font-size: 13pt;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 12px 20px;
+  float: right;
+  margin-right: 15%;
 }
 
-p {
+h1 {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin-left: 1%;
+}
+
+.full-message {
   font-family: 'Poppins', sans-serif;
   color: white;
   font-size: 14pt;
   background-color: rgb(50, 220, 210);
-  padding: 10px;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 .name-and-time {
@@ -46,4 +55,5 @@ p {
 h3 {
   font-family: 'Poppins', sans-serif;
   color: white;
+  margin-left: 1%;
 }
