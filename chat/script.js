@@ -18,6 +18,7 @@ function start(user) {
 function recieveMessage(message) {
 
 	var date = new Date(message.timestamp);
+	var day = date.getDate();
 	var month = date.getMonth() + 1;
 	var mins = date.getMinutes();
 	var hours = date.getHours();
@@ -32,7 +33,7 @@ function recieveMessage(message) {
 
 	document.cookie = JSON.stringify(users);
 
-	var time = hours + ":" + mins;
+	var time = month + "/" + day + ", " + hours + ":" + mins;
 
 	var timeDisplay = document.createElement("p");
 	timeDisplay.className = "time";
@@ -55,7 +56,6 @@ function recieveMessage(message) {
 	fullMessage.className = "full-message";
 
 	fullMessage.append(nameAndTime, text);
-	console.log(fullMessage);
 	displayedMessages.append(fullMessage);
 	displayedMessages.scrollTop = displayedMessages.scrollHeight;
 }
