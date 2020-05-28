@@ -31,6 +31,7 @@ function recieveMessage(message) {
 	}
 
 	document.cookie = JSON.stringify(users);
+	console.log(document.cookie);
 
 	var time = month + "/" + day + ", " + hours + ":" + mins;
 
