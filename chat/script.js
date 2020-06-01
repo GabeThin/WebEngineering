@@ -5,11 +5,13 @@ var displayedMessages = document.getElementById("display-messages");
 displayedMessages.innerHTML = "";
 var users = {};
 
+var previousDate = {};
+
 //This function runs after you have logged in. Your user information is passed to you in the variable 'user'
 function start(user) {
 	console.log(user);
 	document.getElementById("send-message").addEventListener("click", send);
-	users = JSON.parse(document.cookie);
+	// users = JSON.parse(document.cookie);
 }
 
 //This function runs every time you recieve a message. It will run for every message already in the database.
@@ -17,10 +19,22 @@ function start(user) {
 function recieveMessage(message) {
 
 	var date = new Date(message.timestamp);
+	var year = date.getYear();
 	var day = date.getDate();
 	var month = date.getMonth() + 1;
 	var mins = date.getMinutes();
 	var hours = date.getHours();
+
+	var dateSeparator = document.createElement("p");
+
+	if (previousDate.day != day || previousDate.month != month || previousDate.year != year) {
+		console.log(day);
+
+		previousDate.day = day;
+		previousDate.month = month;
+		previousDate.year = year;
+	}
+
 
 	if (mins.toString().length == 1) {
 		mins = "0" + mins;
@@ -49,7 +63,7 @@ function recieveMessage(message) {
 
 	var text = document.createElement("p");
 	text.className = "text";
-	text.innerHTML = message.content;
+	text.innerText = message.content;
 
 	var fullMessage = document.createElement("p");
 	fullMessage.className = "full-message";
