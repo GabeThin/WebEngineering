@@ -11,7 +11,7 @@ var previousDate = {};
 function start(user) {
 	console.log(user);
 	document.getElementById("send-message").addEventListener("click", send);
-	users = JSON.parse(document.cookie);
+	// users = JSON.parse(document.cookie);
 }
 
 //This function runs every time you recieve a message. It will run for every message already in the database.
@@ -26,9 +26,6 @@ function recieveMessage(message) {
 	var hours = date.getHours();
 
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-	var dateSeparator = document.createElement("p");
-
 
 	if (mins.toString().length == 1) {
 		mins = "0" + mins;
