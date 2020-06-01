@@ -74,7 +74,7 @@ function recieveMessage(message) {
 		var displayMonthDate = document.createElement("p");
 		var monthDate = months[date.getMonth()] + " " + date.getDate() + ", 2020";
 
-		displayMonthDate.innerText = "----------------------------------------------------------    " + monthDate + "   ---------------------------------------------------------";
+		displayMonthDate.innerText = "---------------------------------------------------------    " + monthDate + "   ---------------------------------------------------------";
 
 		fullMessage.append(displayMonthDate, nameAndTime, text);
 		console.log(displayMonthDate);
