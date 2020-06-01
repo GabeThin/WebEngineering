@@ -39,22 +39,3 @@ h1 {
   color: white;
   margin-left: 1%;
 }
-
-.full-message {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  font-size: 14pt;
-  background-color: rgb(50, 220, 210);
-  margin-left: 1%;
-  margin-right: 1%;
-}
-
-.name-and-time {
-  font-size: 16pt;
-}
-
-h3 {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  margin-left: 1%;
-}

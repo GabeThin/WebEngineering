@@ -25,15 +25,9 @@ function recieveMessage(message) {
 	var mins = date.getMinutes();
 	var hours = date.getHours();
 
+	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 	var dateSeparator = document.createElement("p");
-
-	if (previousDate.day != day || previousDate.month != month || previousDate.year != year) {
-		console.log(day);
-
-		previousDate.day = day;
-		previousDate.month = month;
-		previousDate.year = year;
-	}
 
 
 	if (mins.toString().length == 1) {
@@ -46,7 +40,7 @@ function recieveMessage(message) {
 
 	document.cookie = JSON.stringify(users);
 
-	var time = month + "/" + day + ", " + hours + ":" + mins;
+	var time = hours + ":" + mins;
 
 	var timeDisplay = document.createElement("p");
 	timeDisplay.className = "time";
@@ -69,8 +63,27 @@ function recieveMessage(message) {
 	fullMessage.className = "full-message";
 
 	fullMessage.append(nameAndTime, text);
+
+	if (previousDate.day != day || previousDate.month != month || previousDate.year != year) {
+		console.log(day);
+
+		previousDate.day = day;
+		previousDate.month = month;
+		previousDate.year = year;
+
+		var displayMonthDate = document.createElement("p");
+		var monthDate = months[date.getMonth()] + " " + date.getDate() + ", 2020";
+
+		displayMonthDate.innerText = "----------------------------------------------------------    " + monthDate + "   ---------------------------------------------------------";
+
+		fullMessage.append(displayMonthDate, nameAndTime, text);
+		console.log(displayMonthDate);
+	}
+
 	displayedMessages.append(fullMessage);
 	displayedMessages.scrollTop = displayedMessages.scrollHeight;
+
+
 }
 
 //The sendMessage('text') function will send a message from you to the database.
