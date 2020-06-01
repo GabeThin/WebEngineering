@@ -11,6 +11,7 @@ var previousDate = {};
 function start(user) {
 	console.log(user);
 	document.getElementById("send-message").addEventListener("click", send);
+	console.log(document.cookie);
 	// users = JSON.parse(document.cookie);
 }
 
