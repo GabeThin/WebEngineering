@@ -13,6 +13,7 @@ function start(user) {
 	document.getElementById("send-message").addEventListener("click", send);
 	console.log(document.cookie);
 	users = JSON.parse(document.cookie);
+	console.log(users);
 }
 
 //This function runs every time you recieve a message. It will run for every message already in the database.
