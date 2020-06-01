@@ -64,7 +64,6 @@ function recieveMessage(message) {
 	fullMessage.append(nameAndTime, text);
 
 	if (previousDate.day != day || previousDate.month != month || previousDate.year != year) {
-		console.log(day);
 
 		previousDate.day = day;
 		previousDate.month = month;
@@ -76,13 +75,9 @@ function recieveMessage(message) {
 		displayMonthDate.innerText = "---------------------------------------------------------    " + monthDate + "   ---------------------------------------------------------";
 
 		fullMessage.append(displayMonthDate, nameAndTime, text);
-		console.log(displayMonthDate);
+		displayedMessages.append(fullMessage);
+		displayedMessages.scrollTop = displayedMessages.scrollHeight;
 	}
-
-	displayedMessages.append(fullMessage);
-	displayedMessages.scrollTop = displayedMessages.scrollHeight;
-
-
 }
 
 //The sendMessage('text') function will send a message from you to the database.
