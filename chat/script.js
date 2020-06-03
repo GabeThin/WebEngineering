@@ -11,9 +11,7 @@ var previousDate = {};
 function start(user) {
 	console.log(user);
 	document.getElementById("send-message").addEventListener("click", send);
-	console.log(document.cookie);
 	users = JSON.parse(document.cookie);
-	console.log(users);
 }
 
 //This function runs every time you recieve a message. It will run for every message already in the database.
@@ -72,7 +70,8 @@ function recieveMessage(message) {
 		var displayMonthDate = document.createElement("p");
 		var monthDate = months[date.getMonth()] + " " + date.getDate() + ", 2020";
 
-		displayMonthDate.innerText = "---------------------------------------------------------    " + monthDate + "   ---------------------------------------------------------";
+		displayMonthDate.innerText = monthDate;
+		displayMonthDate.style.textAlign = "center";
 
 		fullMessage.append(displayMonthDate, nameAndTime, text);
 		displayedMessages.append(fullMessage);
